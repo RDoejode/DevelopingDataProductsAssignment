@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Developing Data Products Assignment</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Developing Data Products Assignment">
+  <meta name="author" content="Ravishankar Doejode">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Developing Data Products Assignment</h1>
+    <h2>Slidify Deck</h2>
+    <p>Ravishankar Doejode<br/>Developer</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Developing Data Products - Shinyapp Assignment</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol class = "build incremental">
+<li>Shiny App with three different actionButtons</li>
+<li>Datasets that come with R used</li>
+<li>MTCars, Faithful and Iris datasets used</li>
+<li>Linear Regression on MTCars and Faithful dataset</li>
+<li>K-Means Clustering on Iris</li>
+<li>ShinyApp url - <a href="https://rdoejode.shinyapps.io/shinyapp/">https://rdoejode.shinyapps.io/shinyapp/</a></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Linear Regression on MTCars</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>MPG is the response variable</li>
+<li>AM, CYL, DISP, HP and WT are predictor variables</li>
+<li>Radio button to select the combination of predictor variables</li>
+<li>Action button to trigger linear regression</li>
+<li>Output to show coefficients</li>
+</ol>
+
+<pre><code class="r">lm(mpg ~ am + cyl + disp + hp + wt, data=mtcars)$coefficients
+</code></pre>
+
+<pre><code>## (Intercept)          am         cyl        disp          hp          wt 
+## 38.20279869  1.55649163 -1.10637984  0.01225708 -0.02796002 -3.30262301
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Linear Regression on Faithful</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Eruptions is the response variable</li>
+<li>Waiting is the predictor variable</li>
+<li>Action button to trigger linear regression</li>
+<li>Output to show coefficients</li>
+</ol>
+
+<pre><code class="r">lm(eruptions~waiting, data=faithful)$coefficients
+</code></pre>
+
+<pre><code>## (Intercept)     waiting 
+## -1.87401599  0.07562795
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>K-Means Clustering on Iris</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Species is the response variable</li>
+<li>Sepal.Length Sepal.Width Petal.Length Petal.Width are predictor variables</li>
+<li>Output to show the prediction quality in the form of a table</li>
+</ol>
+
+<pre><code class="r">newiris&lt;-iris
+newiris$Species &lt;-NULL
+kc&lt;-kmeans(newiris,3)
+table(iris$Species,kc$cluster)
+</code></pre>
+
+<pre><code>##             
+##               1  2  3
+##   setosa     50  0  0
+##   versicolor  0 48  2
+##   virginica   0 14 36
+</code></pre>
+
+<p>###Thank You</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Developing Data Products - Shinyapp Assignment'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Linear Regression on MTCars'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Linear Regression on Faithful'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='K-Means Clustering on Iris'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
